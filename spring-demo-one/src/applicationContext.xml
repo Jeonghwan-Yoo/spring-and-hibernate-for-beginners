@@ -27,9 +27,13 @@
 	</bean>
 	
 	<!-- Define the denependency -->
+	<!-- 
 	<bean id="myFortuneService" class="com.luv2code.springdemo.HappyFortuneService">
 	</bean>
-	 
+	-->
+	<bean id="myFortuneService" class="com.luv2code.springdemo.RandomFortuneService">
+	</bean>
+	
 	<bean id="myCricketCoach" class="com.luv2code.springdemo.CricketCoach">
 		<!-- set up setter injection -->
 		<property name="fortuneService" ref="myFortuneService" />
