@@ -16,6 +16,7 @@
 	 	<constructor-arg ref="myFortuneService" />
 	</bean>
 	<bean id="myGolfCoach" class="com.luv2code.springdemo.GolfCoach">
+		<constructor-arg ref="myFortuneService" />
 	</bean>
 	
 	<!-- 
