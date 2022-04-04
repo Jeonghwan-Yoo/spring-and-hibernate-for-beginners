@@ -15,6 +15,8 @@
 	 	<!-- set up constructor injection -->
 	 	<constructor-arg ref="myFortuneService" />
 	</bean>
+	<bean id="myGolfCoach" class="com.luv2code.springdemo.GolfCoach">
+	</bean>
 	
 	<!-- 
 		Add a logger config to see logging messages.		
