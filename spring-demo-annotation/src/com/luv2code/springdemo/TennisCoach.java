@@ -20,6 +20,13 @@ public class TennisCoach implements Coach {
 		fortuneService = theFortuneService;
 	}
 	
+	// define a method
+	@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService) {
+		System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
+		fortuneService = theFortuneService;
+	}
+	
 	// @Autowired
 //	public TennisCoach(FortuneService theFortuneService) {
 //		System.out.println("Tennis Coach constructor: " + theFortuneService);
