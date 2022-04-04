@@ -26,14 +26,12 @@
 	-->
 	<bean id="myFortuneService" class="com.luv2code.springdemo.RandomFortuneService">
 	</bean>
-	
-	<!--
-	<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach">
- 	<constructor-arg ref="myFortuneService" />
+		
+	<bean id="myGolfCoach" class="com.luv2code.springdemo.GolfCoach" scope="singleton">
+		<constructor-arg ref="myFortuneService" />
 	</bean>
-	-->
 	
-	<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach" scope="prototype">
+	<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach" init-method="doMyStartupStuff" destroy-method="doMyCleanupStuffYoYo">
 	 	<!-- set up constructor injection -->
 	 	<constructor-arg ref="myFortuneService" />
 	</bean>
