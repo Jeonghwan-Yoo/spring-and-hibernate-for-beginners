@@ -1,6 +1,7 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,12 +9,36 @@ public class TennisCoach implements Coach {
 
 	// field injection
 	@Autowired
+	// @Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	// define a default constructor
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
+	
+	// qualifier example
+	/*
+	@Autowired
+	public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
+        this.fortuneService = fortuneService;
+	}
+	
+	@Autowired
+	public void setFortuneService(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: inside setFortuneService() method");
+		this.fortuneService = fortuneService;
+	}
+	
+	@Autowired
+	@Qualifier("randomFortuneService")
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: inside setFortuneService() method");
+		this.fortuneService = fortuneService;
+	}
+	*/
 	
 	// define a setter method
 //	@Autowired
