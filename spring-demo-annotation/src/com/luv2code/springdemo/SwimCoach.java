@@ -17,6 +17,10 @@ public class SwimCoach implements Coach {
 	@Value("${foo.team}")
 	private String team;
 	
+	public SwimCoach(FortuneService sadFortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
 	@Override
 	public String getDailyWorkout() {
 		return "Swim 1000 meters as a warm up.";
