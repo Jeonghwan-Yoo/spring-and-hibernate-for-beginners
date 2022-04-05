@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 public class SwimCoach implements Coach {
 
 	@Autowired
-//	@Qualifier("randomFortuneService")
-	@Qualifier("fileFortuneService")
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	@Value("${foo.email}")
