@@ -43,6 +43,9 @@ public class GetInstructorDetailDemo {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			// handle connection leak issue
+			session.close();
+			
 			factory.close();
 		}
 	}
